@@ -36,7 +36,7 @@ public class CustomerService {
 		return customer.stream().map(c->new CustomerResponse(c.getId(),c.getName(),c.getEmail())).toList();
 		}
 	
-	public CustomerResponse getCustomerNyId(long id) {
+	public CustomerResponse getCustomerById(long id) {
 		Customer customer = repoCust.findById(id).get();
 		return mapToResponse(customer);
 	}
@@ -53,7 +53,15 @@ public class CustomerService {
 	}
 	
 	public CustomerResponse updateCustomer(long id, CustomerRequest custNew) {
-		Customer custE
+		Customer custExist = repoCust.findById(id).orElseThrow(() -> new CustomerNotFoundException(id));
+		custExist.setName(custNew.getName());
+		custExist.setEmail(custNew.getEmail());
+		repoCust.save(custExist);
+		return new CustomerResponse(custExist.getId(),custExist.getName(),custExist.getEmail());
 	}
 	
+	public void deleteCustomerById(Long id) {
+		Customer cust = repoCust.findById(id).orElseThrow(()-> new CustomerNotFoundException(id));
+		repoCust.delete(cust);
+	}
 }
