@@ -1,4 +1,4 @@
-package com.cp.lab08sec1.demo.model;
+package com.cp.kku.kku.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,19 +8,19 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="author")
-public class Author {
+@Table(name="customer")
+public class Customer {
     @Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String name;
 	private String email;
 	
-	public Author() {
+        public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Author(long id, String name, String email) {
+        public Customer(long id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,7 +28,7 @@ public class Author {
 	}
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", name=" + name + ", email=" + email + "]";
+                return "Customer [id=" + id + ", name=" + name + ", email=" + email + "]";
 	}
 	public long getId() {
 		return id;

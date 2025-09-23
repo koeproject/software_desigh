@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 
 @Configuration
-public class WebAuthorConfig {
+public class WebCustomerConfig {
 	 
 	@Bean //bean id ="webclient"
     public WebClient webClient(WebClient.Builder builder) {
