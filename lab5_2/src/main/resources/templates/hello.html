@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Example View</title>
+</head>
+<body>
+    <h1 th:text="${customer.id}">Default Message</h1>
+	<h1 th:text="'welcome   ' + ${customer.id} + '!!!!!!!'"></h1>
+	<h1 th:text="'welcome   ' + ${customer.name} + '!!!!!!!'"></h1>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@"
+# IDE / Eclipse / IntelliJ
+.classpath
+.project
+.settings/
+.metadata/
+.idea/
+*.iml
+
+# Build outputs
+target/
+bin/
+out/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+"@ | Set-Content .gitignore

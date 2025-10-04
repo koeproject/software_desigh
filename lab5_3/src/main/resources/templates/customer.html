@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Info</title>
+</head>
+<body>
+	<h2>Customers List</h2>
+	<table border="1" cellpadding="5" cellspacing="0">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+		</tr>
+		<tr th:each="customer : ${customers}">
+			<td th:text = "${customer.id}"></td>
+			<td th:text = "${customer.name}"></td>
+		</tr>
+	</table>
+</body>
+</html>
